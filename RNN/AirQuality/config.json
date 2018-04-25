@@ -1,12 +1,14 @@
 {
   "data": {
     "datanames": ["GEltham", "GWesthorne", "BSladeGreen",  "GWoolwich"],
-    "vars": [0,1,2,3,4],
+    "datanames_to_use": 0,
+    "vars": [0,1,2,3,4,5,6,7,8],
     "datasize": 35064,
     "testsize": 8784,
-    "dataset": 0,
+    "dataset": 3,
     "lag": 6,
-    "ahead": 1
+    "ahead": 1,
+    "predict": 1
   },
   "arch": {
     "neurons": 32,
