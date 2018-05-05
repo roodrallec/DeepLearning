@@ -102,16 +102,16 @@ def r2_score(y_true, y_pred):
 if __name__ == '__main__':
     config = json.load(open('config.json'))
     df = load_dataset(config['data'])
-    print(df.head())
     data = StandardScaler().fit_transform(df.values)
-    lag = config['data']['lag']
-    ahead = config['data']['ahead']
+
     test_size = math.ceil(data.shape[0] * config['data']['test_fraction'])
     val_size = test_size
     train_size = data.shape[0] - test_size - val_size
     train_data = data[:train_size, :]
     test_data = data[train_size:train_size + test_size, :]
     val_data = data[train_size + test_size:, :]
+
+
     train = lagged_matrix(train_data, lag=lag, ahead=ahead)
     test = lagged_matrix(test_data, lag=lag, ahead=ahead)
     val = lagged_matrix(val_data, lag=lag, ahead=ahead)
@@ -122,18 +122,19 @@ if __name__ == '__main__':
     # LOGGING
     n_sites = len(np.unique([site.split('_')[0] for site in config['data']['data_slice']]))
     n_vars = len(config['data']['data_slice'])
-    dir_name = "vars=%d,nn=%d,nl=%d,lag=%d,drop= %3.2f\n" % (
+    dir_name = "vars=%d,nn=%d,nl=%d,lag=%d,drop= %3.2f,ahead=%d" % (
         n_vars,
         config['arch']['neurons'],
         config['arch']['nlayers'],
-        config['data']['lag'],
-        config['arch']['drop'])
+        lag,
+        config['arch']['drop'],
+        ahead)
 
     log_dir = "logs/" + dir_name
     os.makedirs(log_dir)
     tensor_board = TrainValTensorBoard(log_dir=log_dir.format(time()))
-    # log_file = open(log_dir + '/run_params.txt', 'a')
-    # sys.stdout = log_file
+    log_file = open('./multi_step_results.txt', 'a')
+    sys.stdout = log_file
     # MODEL
     model = architecture(neurons=config['arch']['neurons'],
                          drop=config['arch']['drop'],
@@ -162,4 +163,4 @@ if __name__ == '__main__':
     score = model.evaluate(val_x, val_y, batch_size=config['training']['batch'], verbose=0)
     # pprint.pprint(config)
     # keras2ascii(model)
-    print('MSE test= ', [float("{0:.3f}".format(s)) for s in score])
+    print('Lag=', lag, 'Steps ahead=', ahead, '; MSE test= ', [float("{0:.3f}".format(s)) for s in score])

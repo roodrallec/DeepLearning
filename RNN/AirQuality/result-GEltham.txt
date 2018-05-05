@@ -1,9 +1,0 @@
-DATAS= 0, LAG= 6, AHEAD= 1, RNN= LSTM, NLAY= 1, NNEUR= 32, DROP= 0.00, ACT= tanh, RACT= hard_sigmoid, OPT= adam, R2Test = 0.79375, R2pers = 0.76403
-DATAS= 0, LAG= 6, AHEAD= 1, RNN= LSTM, NLAY= 1, NNEUR= 32, DROP= 0.00, ACT= tanh, RACT= hard_sigmoid, OPT= adam, R2Test = 0.79404, R2pers = 0.76403
-DATAS= 0, LAG= 6, AHEAD= 1, RNN= LSTM, NLAY= 1, NNEUR= 32, DROP= 0.00, ACT= tanh, RACT= hard_sigmoid, OPT= adam, R2Test = 0.79408, R2pers = 0.76403
-DATAS= 0, LAG= 6, AHEAD= 1, RNN= LSTM, NLAY= 1, NNEUR= 32, DROP= 0.00, ACT= tanh, RACT= hard_sigmoid, OPT= adam, R2Test = 0.79400, R2pers = 0.76403
-DATAS= 0, LAG= 6, AHEAD= 1, RNN= LSTM, NLAY= 1, NNEUR= 32, DROP= 0.00, ACT= tanh, RACT= hard_sigmoid, OPT= adam, R2Test = 0.79337, R2pers = 0.76403
-DATAS= 0, LAG= 6, AHEAD= 1, RNN= LSTM, NLAY= 1, NNEUR= 32, DROP= 0.00, ACT= tanh, RACT= hard_sigmoid, OPT= adam, R2Test = 0.79336, R2pers = 0.76403
-DATAS= 0, LAG= 6, AHEAD= 1, RNN= LSTM, NLAY= 1, NNEUR= 32, DROP= 0.00, ACT= tanh, RACT= hard_sigmoid, OPT= adam, R2Test = 0.79456, R2pers = 0.76403
-DATAS= 0, LAG= 6, AHEAD= 1, RNN= LSTM, NLAY= 1, NNEUR= 32, DROP= 0.00, ACT= tanh, RACT= hard_sigmoid, OPT= adam, R2Test = 0.79276, R2pers = 0.76403
-DATAS= 0, LAG= 6, AHEAD= 1, RNN= LSTM, NLAY= 1, NNEUR= 32, DROP= 0.00, ACT= tanh, RACT= hard_sigmoid, OPT= adam, R2Test = 0.79234, R2pers = 0.76403
