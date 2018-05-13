@@ -11,6 +11,7 @@ import configparser
 import csv
 import numpy as np
 
+
 def load_data_mnist(dataset):
     f = gzip.open(dataset, 'rb')
     train_set, valid_set, test_set = pickle.load(f, encoding='latin1')
