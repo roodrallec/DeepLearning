@@ -38,6 +38,7 @@ for learning_rate in learning_rates:
 
         # Tensorboard summaries
         tf.summary.scalar("loss_function", loss_function)
+        tf.summary.scalar("learning_rate", learning_rate)
         tf.summary.histogram("weights", W)
         tf.summary.histogram("biases", b)
 
